@@ -12,7 +12,7 @@ const App = () => {
           </Box>
           <Box
             flex={8}
-            sx={{ background: "magenta", width: "100%", height: "100vh" }}
+            sx={{ background: "https://c4.wallpaperflare.com/wallpaper/944/995/821/abstract-backgrounds-minimalistic-website-wallpaper-preview.jpg", width: "100%", height: "100vh" }}
           >
             Second
           </Box>

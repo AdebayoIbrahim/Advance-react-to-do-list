@@ -1,20 +1,30 @@
 import React from "react";
 import "./main.css";
 import { Box, Stack } from "@mui/material";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Important from "./pages/Important";
+import Sidebar from "./components/layout/Sidebar";
 const App = () => {
   return (
     <React.Fragment>
-      {/* <h1> Hello, {new Date().toUTCString()}</h1> */}
-      <Box sx={{ width: "100%" }}>
-        <Stack direction="row" gap={0} sx={{ width: "100%" }}>
+      <Box sx={{ marginInline: "5%" }}>
+        <Stack direction="row" gap={0} sx={{}}>
           <Box flex={2} sx={{ background: "red", height: "100vh" }}>
-            First
+            <Sidebar />
           </Box>
           <Box
-            flex={8}
-            sx={{ background: "https://c4.wallpaperflare.com/wallpaper/944/995/821/abstract-backgrounds-minimalistic-website-wallpaper-preview.jpg", width: "100%", height: "100vh" }}
+            flex={6}
+            sx={{
+              background: "yellow",
+              width: "100%",
+              height: "100vh",
+            }}
           >
-            Second
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/important" element={<Important />} />
+            </Routes>
           </Box>
         </Stack>
       </Box>

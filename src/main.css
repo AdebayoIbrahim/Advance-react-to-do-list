@@ -7,7 +7,7 @@
   --black: #202142;
 }
 body {
-  background: var(--black);
+  /* background: var(--black); */
   font-family: Source Sans Pro;
 }
 h1 {

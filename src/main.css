@@ -2,14 +2,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Poppins !important;
 }
 :root {
   --black: #202142;
 }
 body {
   /* background: var(--black); */
-  font-family: Source Sans Pro;
+
+  color: white;
 }
-h1 {
+/* h1 {
   color: rgb(207, 131, 144);
-}
+} */

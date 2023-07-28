@@ -8,7 +8,7 @@ import Sidebar from "./components/layout/Sidebar";
 const App = () => {
   return (
     <React.Fragment>
-      <Box sx={{ marginInline: "5%" }}>
+      <Box sx={{ marginInline: "2%" }}>
         <Stack direction="row" gap={0} sx={{}}>
           <Box flex={2} sx={{ background: "red", height: "100vh" }}>
             <Sidebar />
@@ -16,7 +16,6 @@ const App = () => {
           <Box
             flex={6}
             sx={{
-              background: "yellow",
               width: "100%",
               height: "100vh",
             }}

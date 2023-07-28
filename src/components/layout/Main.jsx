@@ -1,24 +1,10 @@
 import React from "react";
 import { Typography, Box, Stack } from "@mui/material";
 import bg from "../assets/Spider.jpg";
+import { Month, Weeks } from "../../datearray.js";
 function Main() {
-  const datearr = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-
-  const dateValue = `${new Date().getDay()}, ${
-    datearr[new Date().getMonth()]
+  const dateValue = `${Weeks[new Date().getDay()]}, ${
+    Month[new Date().getMonth()]
   } ${new Date().getDate()}`;
   return (
     <>

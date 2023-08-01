@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
-
+import notebook from "./assets/notbook.png";
 function Tooltip() {
   return (
     <Box
@@ -10,9 +10,17 @@ function Tooltip() {
         borderRadius: "10px",
         background: "rgb(0 0 0 / .4)",
         textAlign: "center",
+        lineHeight: "0 !important",
       }}
     >
-      <Typography component="h1" fontSize={20} fontWeight={450}>
+      <img
+        src={notebook}
+        alt="notebook"
+        width={80}
+        height={80}
+        style={{ marginBlock: "1rem" }}
+      />
+      <Typography component="h1" pt={1} pb={1} fontSize={20} fontWeight={450}>
         Focus On Your Day
       </Typography>{" "}
       <Typography variant="caption">

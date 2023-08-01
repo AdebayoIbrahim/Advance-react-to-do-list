@@ -10,7 +10,7 @@ function Main() {
   return (
     <>
       <Stack
-        p={3}
+        p={5}
         direction="column"
         justifyContent="space-between"
         sx={{

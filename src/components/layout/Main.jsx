@@ -2,6 +2,7 @@ import React from "react";
 import { Typography, Box, Stack } from "@mui/material";
 import bg from "../assets/Spider.jpg";
 import { Month, Weeks } from "../../datearray.js";
+import Tooltip from "../fastcontent";
 function Main() {
   const dateValue = `${Weeks[new Date().getDay()]}, ${
     Month[new Date().getMonth()]
@@ -31,7 +32,9 @@ function Main() {
           </Box>
           <Box>Click</Box>
         </Stack>
-        <Box sx={{ alignSelf: "center" }}>Content</Box>
+        <Box sx={{ alignSelf: "center" }}>
+          <Tooltip />
+        </Box>
         <Box>Input</Box>
       </Stack>
     </>

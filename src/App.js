@@ -4,6 +4,9 @@ import { Box, Stack } from "@mui/material";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Important from "./pages/Important";
+import Planned from "./pages/Planned";
+import Assigned from "./pages/Assigned";
+import Tasks from "./pages/Tasks";
 import Sidebar from "./components/layout/Sidebar";
 const App = () => {
   return (
@@ -23,6 +26,9 @@ const App = () => {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/important" element={<Important />} />
+              <Route path="/planned" element={<Planned />} />
+              <Route path="/asssgned?to='me'" element={<Assigned />} />
+              <Route path="/tasks" element={<Tasks />} />
             </Routes>
           </Box>
         </Stack>

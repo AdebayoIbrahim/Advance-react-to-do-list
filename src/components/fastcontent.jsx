@@ -6,9 +6,9 @@ function Tooltip() {
     <Box
       sx={{
         width: "15em",
-        padding: "1rem",
+        padding: "1rem .8rem .8rem",
         borderRadius: "10px",
-        background: "rgb(0 0 0 / .4)",
+        background: "rgb(0 0 0 / .3)",
         textAlign: "center",
         lineHeight: "0 !important",
       }}
@@ -18,7 +18,7 @@ function Tooltip() {
         alt="notebook"
         width={80}
         height={80}
-        style={{ marginBlock: "1rem" }}
+        style={{ marginBlock: ".8rem" }}
       />
       <Typography component="h1" pt={1} pb={1} fontSize={20} fontWeight={450}>
         Focus On Your Day

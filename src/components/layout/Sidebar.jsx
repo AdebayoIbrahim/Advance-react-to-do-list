@@ -8,12 +8,17 @@ import {
   styled,
   Box,
 } from "@mui/material";
-import { FaSun } from "react-icons/fa";
+import {
+  FaSun,
+  FaStar,
+  FaHome,
+  FaPaperclip,
+  FaPersonBooth,
+} from "react-icons/fa";
 
 const ListText = styled(ListItemText)({
   color: "white",
   marginLeft: "-20px",
-  fontSize: "10px ",
 });
 const Listitem = styled(ListItem)({
   borderRadius: "5px",
@@ -21,14 +26,46 @@ const Listitem = styled(ListItem)({
 });
 export default function Sidebar() {
   return (
-    <Box pl={0.6} pr={0.6} pt={2}>
+    <Box pl={0.6} pr={0.6} pt={7}>
       <List>
-        <Listitem disablePadding={true}>
+        <Listitem disablePadding={true} mt={2}>
           <ListItemButton component="a" href="#">
             <ListItemIcon sx={{ color: "white" }}>
-              <FaSun fontSize="small" />
+              <FaSun fontSize="16px" fill="cyan" />
             </ListItemIcon>
             <ListText primary="My Day" />
+          </ListItemButton>
+        </Listitem>
+        <Listitem disablePadding={true} mt={2}>
+          <ListItemButton component="a" href="#">
+            <ListItemIcon sx={{ color: "white" }}>
+              <FaStar fontSize="16px" fill="#ebda0b" />
+            </ListItemIcon>
+            <ListText primary="Important" />
+          </ListItemButton>
+        </Listitem>
+        <Listitem disablePadding={true} mt={2}>
+          <ListItemButton component="a" href="#">
+            <ListItemIcon sx={{ color: "white" }}>
+              <FaPaperclip fontSize="16px" fill="#1de11a" />
+            </ListItemIcon>
+            <ListText primary="Planned" />
+          </ListItemButton>
+        </Listitem>
+        <Listitem disablePadding={true} mt={2}>
+          <ListItemButton component="a" href="#">
+            <ListItemIcon sx={{ color: "white" }}>
+              <FaPersonBooth fontSize="16px" fill="#f74f0f" />
+            </ListItemIcon>
+            <ListText primary="Assigned to me" />
+          </ListItemButton>
+        </Listitem>
+        <Listitem disablePadding={true} mt={2}>
+          <ListItemButton component="a" href="#">
+            <ListItemIcon sx={{ color: "white" }}>
+              <FaHome fontSize="16px" fill="#215ce1" />
+            </ListItemIcon>
+            <ListText primary="Tasks" />
           </ListItemButton>
         </Listitem>
       </List>

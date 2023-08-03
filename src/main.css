@@ -2,11 +2,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Poppins !important;
+  font-family: Poppins, Roboto, Source Sans Pro !important;
 }
 :root {
   --black: #202142;
 }
 body {
   color: white;
+}
+.css-10hburv-MuiTypography-root {
+  font-weight: 300;
+  font-size: 0.8rem;
 }

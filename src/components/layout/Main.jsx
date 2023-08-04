@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography, Box, Stack } from "@mui/material";
 import { MoreVert } from "@mui/icons-material";
-import bg from "../assets/1973394.jpg";
+import bg from "../assets/all-from-one-place.jpg";
 import { Month, Weeks } from "../../datearray.js";
 import Tooltip from "../fastcontent";
 function Main() {

@@ -7,6 +7,7 @@ import {
   ListItemText,
   styled,
   Box,
+  Badge,
 } from "@mui/material";
 import {
   FaSun,
@@ -81,6 +82,14 @@ export default function Sidebar() {
               <FaHome fontSize="16px" fill="#215ce1" />
             </ListItemIcon>
             <ListText primary="Tasks" />
+            <Box component="span" sx={{ textAlign: "right" }}>
+              <Badge
+                badgeContent={4}
+                sx={{
+                  color: "#e2e509",
+                }}
+              ></Badge>
+            </Box>
           </ListItemButton>
         </Listitem>
       </List>

@@ -24,7 +24,7 @@ function Tooltip() {
         Focus On Your Day
       </Typography>{" "}
       <Typography variant="caption">
-        Get things done with My Day,a list that refreshes everyday
+        Get things done with My Day, a list that refreshes everyday
       </Typography>
     </Box>
   );

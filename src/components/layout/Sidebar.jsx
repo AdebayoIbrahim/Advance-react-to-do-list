@@ -87,8 +87,15 @@ export default function Sidebar() {
                 badgeContent={4}
                 sx={{
                   color: "#e2e509",
+                  "& .MuiBadge-badge": {
+                    backgroundColor: "#686868",
+                    width: 20,
+                    height: 20,
+                    borderRadius: "50%",
+                  },
                 }}
-              ></Badge>
+                Badge
+              />
             </Box>
           </ListItemButton>
         </Listitem>

@@ -8,7 +8,7 @@ function Tooltip() {
         width: "15em",
         padding: "1rem .8rem .8rem",
         borderRadius: "10px",
-        background: "rgb(0 0 0 / .3)",
+        background: "rgb(0 0 0 / .5)",
         textAlign: "center",
         lineHeight: "0 !important",
       }}

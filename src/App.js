@@ -13,7 +13,7 @@ const App = () => {
     <React.Fragment>
       <Box sx={{ width: "100%" }}>
         <Stack direction="row" gap={0} sx={{}}>
-          <Box flex={2} sx={{ background: "#212121", height: "100vh" }}>
+          <Box flex={1.8} sx={{ background: "#212121", height: "100vh" }}>
             <Sidebar />
           </Box>
           <Box

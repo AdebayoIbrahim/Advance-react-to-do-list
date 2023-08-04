@@ -15,7 +15,6 @@ import {
   FaPaperclip,
   FaPersonBooth,
 } from "react-icons/fa";
-
 const ListText = styled(ListItemText)({
   color: "white",
   marginLeft: "-20px",
@@ -26,7 +25,23 @@ const Listitem = styled(ListItem)({
 });
 export default function Sidebar() {
   return (
-    <Box pl={0.6} pr={0.6} pt={7}>
+    <Box
+      pl={0.6}
+      pr={0.6}
+      pt={7}
+      sx={{
+        position: "relative",
+        "&:after": {
+          content: '""',
+          position: "absolute",
+          bottom: "-5px",
+          width: "100%",
+          left: 0,
+          height: "1px",
+          background: "rgba(225,225,225,.7)",
+        },
+      }}
+    >
       <List>
         <Listitem disablePadding={true} mt={2}>
           <ListItemButton component="a" href="#">

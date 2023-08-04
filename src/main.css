@@ -4,6 +4,9 @@
   box-sizing: border-box;
   font-family: Poppins, Roboto, Source Sans Pro !important;
 }
+/* html {
+  font-size: 90% !important;
+} */
 :root {
   --black: #202142;
 }
@@ -12,5 +15,5 @@ body {
 }
 .css-10hburv-MuiTypography-root {
   font-weight: 300;
-  font-size: 0.8rem;
+  font-size: 0.9rem !important;
 }

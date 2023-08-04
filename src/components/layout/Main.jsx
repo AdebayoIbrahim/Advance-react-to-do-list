@@ -1,5 +1,6 @@
 import React from "react";
 import { Typography, Box, Stack } from "@mui/material";
+import { MoreVert } from "@mui/icons-material";
 import bg from "../assets/Spider.jpg";
 import { Month, Weeks } from "../../datearray.js";
 import Tooltip from "../fastcontent";
@@ -18,7 +19,6 @@ function Main() {
           height: "100%",
           background: `url(${bg})`,
           backgroundSize: "cover",
-          display: "",
         }}
       >
         <Stack direction="row" justifyContent="space-between">
@@ -30,7 +30,9 @@ function Main() {
               {dateValue}
             </Typography>
           </Box>
-          <Box>Click</Box>
+          <Box>
+            <MoreVert sx={{ transform: "rotate(90deg)" }} />
+          </Box>
         </Stack>
         <Box sx={{ alignSelf: "center" }}>
           <Tooltip />

@@ -17,3 +17,17 @@ body {
   font-weight: 300;
   font-size: 0.9rem !important;
 }
+fieldset {
+  border-color: white !important;
+}
+label {
+  color: white !important;
+}
+/* input-styling */
+.MuiInputBase-input {
+  color: white !important;
+  border-radius: inherit !important;
+}
+#input:focus {
+  background: #212121 !important;
+}

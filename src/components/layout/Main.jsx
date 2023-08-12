@@ -6,6 +6,7 @@ import { Month, Weeks } from "../../datearray.js";
 import Todoform from "../Form/Todoform";
 import Tooltip from "../fastcontent";
 import TodoContext from "../context/todoContext";
+
 function Main() {
   const { Todo } = useContext(TodoContext);
   //getting current date
@@ -14,18 +15,22 @@ function Main() {
   } ${new Date().getDate()}`;
 
   //handling empty data
-  const TODO = Todo.length > 0 || Todo !== null;
+
   return (
     <>
       <Stack
-        p={5}
+        pt={3}
+        pb={3}
+        pl={4}
+        pr={4}
         direction="column"
         justifyContent="space-between"
         sx={{
           width: "100%",
-          height: "100%",
+          height: "100vh",
           background: `url(${bg})`,
           backgroundSize: "cover",
+          overflow: "auto !important",
         }}
       >
         <Box>
@@ -42,15 +47,23 @@ function Main() {
               <MoreVert sx={{ transform: "rotate(90deg)" }} />
             </Box>
           </Stack>
-          {TODO && (
-            <Box sx={{}} mt={1} pt={1}>
-              {Todo.map((todos, indx) => {
-                return <p key={indx}>{todos.data}</p>;
-              })}
-            </Box>
-          )}
         </Box>
-        {!TODO && (
+        {Todo.length > 0 && (
+          <Box
+            sx={{
+              height: "auto !important",
+              overflow: "auto !important",
+            }}
+            mt={2.5}
+            pb={1}
+            mb={1}
+          >
+            {Todo.map((todos, indx) => {
+              return <p key={indx}>{todos.data}</p>;
+            })}
+          </Box>
+        )}
+        {Todo.length <= 0 && (
           <Box sx={{ alignSelf: "center" }}>
             <Tooltip />
           </Box>

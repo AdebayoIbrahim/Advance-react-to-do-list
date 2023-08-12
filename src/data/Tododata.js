@@ -1,23 +1,2 @@
-const Todo = [
-  {
-    id: 1,
-    data: "Hanging Out around @5pm",
-  },
-  {
-    id: 1,
-    data: "Playing Video Games",
-  },
-  {
-    id: 1,
-    data: "Watching Football Mathes!",
-  },
-  {
-    id: 1,
-    data: "Watching Football Mathes!",
-  },
-  {
-    id: 1,
-    data: "Watching Football Mathes!",
-  },
-];
+const Todo = [];
 export default Todo;

@@ -21,7 +21,7 @@ const Todoform = () => {
             ),
           }}
           sx={{
-            "(&:hover)": { background: `${grey[900]} !important` },
+            background: `${grey[900]} `,
           }}
         />
       </Box>

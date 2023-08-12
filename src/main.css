@@ -22,12 +22,10 @@ fieldset {
 }
 label {
   color: white !important;
+  /* font-size: 1rem !important; */
 }
 /* input-styling */
 .MuiInputBase-input {
   color: white !important;
-  border-radius: inherit !important;
-}
-#input:focus {
-  background: #212121 !important;
+  font-size: 0.89rem !important;
 }

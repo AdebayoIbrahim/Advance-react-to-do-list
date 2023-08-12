@@ -94,7 +94,6 @@ export default function Sidebar() {
                     borderRadius: "50%",
                   },
                 }}
-                Badge
               />
             </Box>
           </ListItemButton>

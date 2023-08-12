@@ -1,7 +1,7 @@
 const Todo = [
   {
     id: 1,
-    data: "Haging Out around @ 5pm",
+    data: "Hanging Out around @5pm",
   },
   {
     id: 1,

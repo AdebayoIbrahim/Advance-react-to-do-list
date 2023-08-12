@@ -1,18 +1,19 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Box, TextField } from "@mui/material";
-import { green, grey } from "@mui/material/colors";
-import { Add } from "@mui/icons-material";
+import { grey } from "@mui/material/colors";
+import { Add, Circle } from "@mui/icons-material";
 import { InputAdornment } from "@mui/material";
 
 const Todoform = () => {
   const [placeholder, setPlaceholder] = useState("Add a task");
+  const [icon, setIcon] = useState(true);
   const handleSubmit = (e) => {
     e.preventDefault();
   };
-  //focusing state
-  // const focusState = () => {
-  //   // alert("focused!");
-  //   setPlaceholder("Try Typing 'Studying by 10am'");
+  const setFocusable = () => {
+    setPlaceholder("Try Typing 'Studying by 10am'");
+    setIcon(false);
+  };
   // };
   // useEffect(() => {
   //   inputRef.current.focus()
@@ -23,6 +24,7 @@ const Todoform = () => {
     if (!e.target.matches("input")) {
       if (placeholder !== "Add a task") {
         setPlaceholder("Add a task");
+        setIcon(true);
       }
     }
   });
@@ -31,7 +33,7 @@ const Todoform = () => {
       <Box component="form" onSubmit={handleSubmit} autoComplete="off">
         <TextField
           variant="outlined"
-          onFocus={() => setPlaceholder("Try Typing 'Studying by 10am'")}
+          onFocus={setFocusable}
           placeholder={placeholder}
           id="input"
           className="input"
@@ -39,14 +41,24 @@ const Todoform = () => {
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                <Add sx={{ color: "white" }} />
+                {icon ? (
+                  <Add sx={{ color: "white" }} />
+                ) : (
+                  <Circle
+                    sx={{
+                      strokeWidth: 2,
+                      stroke: "white",
+                      fill: `${grey[900]} `,
+                    }}
+                  />
+                )}
               </InputAdornment>
             ),
           }}
           sx={{
             background: `${grey[900]} `,
             borderRadius: ".3rem !important",
-            "&:focus": { background: `${grey[800]} ` },
+            "&:hover": { background: `${grey[800]} ` },
           }}
         />
       </Box>

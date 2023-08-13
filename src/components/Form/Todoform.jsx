@@ -7,12 +7,22 @@ import { InputAdornment } from "@mui/material";
 const Todoform = () => {
   const [placeholder, setPlaceholder] = useState("Add a task");
   const [icon, setIcon] = useState(true);
+  const [val, setVal] = useState("");
+  //submittion
   const handleSubmit = (e) => {
     e.preventDefault();
   };
+  //focusable
+
   const setFocusable = () => {
     setPlaceholder("Try Typing 'Studying by 10am'");
     setIcon(false);
+  };
+
+  //change
+  const handleChange = (e) => {
+    setVal(e.target.value);
+    console.log(val);
   };
   // };
   // useEffect(() => {
@@ -36,6 +46,7 @@ const Todoform = () => {
           onFocus={setFocusable}
           placeholder={placeholder}
           id="input"
+          onChange={handleChange}
           className="input"
           fullWidth
           InputProps={{

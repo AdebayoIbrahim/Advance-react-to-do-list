@@ -6,6 +6,7 @@ import { Month, Weeks } from "../../datearray.js";
 import Todoform from "../Form/Todoform";
 import Tooltip from "../fastcontent";
 import TodoContext from "../context/todoContext";
+import Todolists from "../Todos/Todolists";
 
 function Main() {
   const { Todo } = useContext(TodoContext);
@@ -59,7 +60,7 @@ function Main() {
             mb={1}
           >
             {Todo.map((todos, indx) => {
-              return <p key={indx}>{todos.data}</p>;
+              return <Todolists key={indx} todos={todos} />;
             })}
           </Box>
         )}

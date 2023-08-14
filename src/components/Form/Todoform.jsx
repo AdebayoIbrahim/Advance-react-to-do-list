@@ -1,16 +1,26 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState, useContext } from "react";
 import { Box, TextField } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import { Add, Circle } from "@mui/icons-material";
 import { InputAdornment } from "@mui/material";
-
+import TodoContext from "../../context/todoContext";
 const Todoform = () => {
   const [placeholder, setPlaceholder] = useState("Add a task");
   const [icon, setIcon] = useState(true);
   const [val, setVal] = useState("");
+
+  const { addTodo } = useContext(TodoContext);
+
   //submittion
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const newTodo = {
+      id: window.crypto.randomUUID(),
+      data: val,
+    };
+    addTodo(newTodo);
+    // console.log(content);
   };
   //focusable
 

@@ -5,11 +5,11 @@ import bg from "../assets/all-from-one-place.jpg";
 import { Month, Weeks } from "../../datearray.js";
 import Todoform from "../Form/Todoform";
 import Tooltip from "../fastcontent";
-import TodoContext from "../context/todoContext";
+import TodoContext from "../../context/todoContext";
 import Todolists from "../Todos/Todolists";
 
 function Main() {
-  const { Todo } = useContext(TodoContext);
+  const { todo } = useContext(TodoContext);
   //getting current date
   const dateValue = `${Weeks[new Date().getDay()]}, ${
     Month[new Date().getMonth()]
@@ -49,7 +49,7 @@ function Main() {
             </Box>
           </Stack>
         </Box>
-        {Todo.length > 0 && (
+        {todo.length > 0 && (
           <Box
             sx={{
               height: "auto !important",
@@ -59,12 +59,12 @@ function Main() {
             pb={1}
             mb={1}
           >
-            {Todo.map((todos, indx) => {
+            {todo.map((todos, indx) => {
               return <Todolists key={indx} todos={todos} />;
             })}
           </Box>
         )}
-        {Todo.length <= 0 && (
+        {todo.length <= 0 && (
           <Box sx={{ alignSelf: "center" }}>
             <Tooltip />
           </Box>

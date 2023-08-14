@@ -1,16 +1,19 @@
 import React from "react";
 import { Card, CardContent } from "@mui/material";
+import { grey } from "@mui/material/colors";
 const CardBox = ({ children }) => {
   return (
     <React.Fragment>
       <Card
         sx={{
-          minHeight: "40px !important",
-          verticalAlign: "center",
           marginBottom: "5px !important",
+          background: `${grey[900]}`,
+          color: "white",
         }}
       >
-        <CardContent>{children}</CardContent>
+        <CardContent sx={{ padding: ".7rem !important" }}>
+          {children}
+        </CardContent>
       </Card>
     </React.Fragment>
   );

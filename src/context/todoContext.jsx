@@ -10,6 +10,7 @@ export const TodoProvider = ({ children }) => {
     setTodo([...todo, newTodo]);
     console.log(newTodo);
   };
+  //delete todo
   return (
     <React.Fragment>
       <TodoContext.Provider

@@ -8,6 +8,7 @@ export const TodoProvider = ({ children }) => {
   //addeing new todos
   const addTodo = (newTodo) => {
     setTodo([...todo, newTodo]);
+    console.log(newTodo);
   };
   return (
     <React.Fragment>

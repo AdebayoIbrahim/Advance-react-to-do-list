@@ -32,7 +32,6 @@ const Todoform = () => {
   //change
   const handleChange = (e) => {
     setVal(e.target.value);
-    console.log(val);
   };
   // };
   // useEffect(() => {

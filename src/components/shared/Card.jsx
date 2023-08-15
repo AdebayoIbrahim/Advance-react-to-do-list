@@ -11,7 +11,7 @@ const CardBox = ({ children }) => {
           color: "white",
         }}
       >
-        <CardContent sx={{ padding: ".5rem !important" }}>
+        <CardContent sx={{ padding: ".4rem !important" }}>
           {children}
         </CardContent>
       </Card>

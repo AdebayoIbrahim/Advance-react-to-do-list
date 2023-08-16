@@ -10,30 +10,11 @@ const Todoform = () => {
   const [val, setVal] = useState("");
 
   const { addTodo } = useContext(TodoContext);
-
-  //submittion
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (val.trim().length < 1) {
-      alert("Please input Your Tasks");
-      return;
-    } else {
-      const newTodo = {
-        id: window.crypto.randomUUID(),
-        data: val,
-      };
-      addTodo(newTodo);
-    }
-    // clearing form values
-    // setVal(" ");
-  };
   //focusable
-
   const setFocusable = () => {
     setPlaceholder("Try Typing 'Studying by 10am'");
     setIcon(false);
   };
-
   //change
   const handleChange = (e) => {
     setVal(e.target.value);
@@ -52,6 +33,21 @@ const Todoform = () => {
       }
     }
   });
+  //submittion
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (val.trim().length < 1) {
+      alert("Please input Your Tasks");
+      return;
+    } else {
+      const newTodo = {
+        id: window.crypto.randomUUID(),
+        data: val,
+      };
+      addTodo(newTodo);
+    }
+    setVal("");
+  };
   return (
     <React.Fragment>
       <Box component="form" onSubmit={handleSubmit} autoComplete="off">
@@ -61,6 +57,7 @@ const Todoform = () => {
           placeholder={placeholder}
           id="input"
           onChange={handleChange}
+          value={val}
           className="input"
           fullWidth
           InputProps={{

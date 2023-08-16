@@ -14,13 +14,18 @@ const Todoform = () => {
   //submittion
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    const newTodo = {
-      id: window.crypto.randomUUID(),
-      data: val,
-    };
-    addTodo(newTodo);
-    // console.log(content);
+    if (val.trim().length < 1) {
+      alert("Please input Your Tasks");
+      return;
+    } else {
+      const newTodo = {
+        id: window.crypto.randomUUID(),
+        data: val,
+      };
+      addTodo(newTodo);
+    }
+    // clearing form values
+    // setVal(" ");
   };
   //focusable
 

@@ -19,12 +19,7 @@ const Todoform = () => {
   const handleChange = (e) => {
     setVal(e.target.value);
   };
-  // };
-  // useEffect(() => {
-  //   inputRef.current.focus()
-  //     ? setPlaceholder("value")
-  //     : setPlaceholder("onfocus");
-  // });
+  //focus out
   window.addEventListener("click", (e) => {
     if (!e.target.matches("input")) {
       if (placeholder !== "Add a task") {

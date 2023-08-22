@@ -19,7 +19,8 @@ const Todolists = ({ todos: { data, id } }) => {
   const handleChecked = () => setDec(!decorate);
   //delete todo
   const deletetodo = () => {
-    deleteTodo(id);
+    window.confirm("Are You Sure You Want to delete this item") &&
+      deleteTodo(id);
   };
   return (
     <CardBox>

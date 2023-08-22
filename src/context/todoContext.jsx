@@ -20,14 +20,20 @@ export const TodoProvider = ({ children }) => {
       })
     );
   };
+
+  //add important
+  const addImportant = (data) => {
+    setImp([...important, data]);
+  };
   return (
     <React.Fragment>
       <TodoContext.Provider
         value={{
           todo,
+          important,
           addTodo,
           deleteTodo,
-          important,
+          addImportant,
         }}
       >
         {children}

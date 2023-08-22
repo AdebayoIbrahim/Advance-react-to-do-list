@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   List,
   ListItem,
@@ -16,6 +16,8 @@ import {
   FaPaperclip,
   FaPersonBooth,
 } from "react-icons/fa";
+import TodoContext from "../../context/todoContext";
+
 const ListText = styled(ListItemText)({
   color: "white",
   marginLeft: "-20px",
@@ -25,6 +27,7 @@ const Listitem = styled(ListItem)({
   "&:hover": { background: "rgb(61 56 56 / .8)" },
 });
 export default function Sidebar() {
+  const { todo } = useContext(TodoContext);
   return (
     <Box
       pl={0.6}
@@ -84,7 +87,7 @@ export default function Sidebar() {
             <ListText primary="Tasks" />
             <Box component="span" sx={{ textAlign: "right" }}>
               <Badge
-                badgeContent={4}
+                badgeContent={todo.length}
                 sx={{
                   color: "#e2e509",
                   "& .MuiBadge-badge": {

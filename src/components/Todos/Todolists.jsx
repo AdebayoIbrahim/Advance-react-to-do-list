@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import CardBox from "../shared/Card";
 import { Stack, Box, Typography, Checkbox } from "@mui/material";
 import { cyan } from "@mui/material/colors";
 import { Star, Edit, Delete } from "@mui/icons-material";
+import TodoContext from "../../context/todoContext";
 
 const iconstyle = {
   fill: "transparent",
@@ -13,11 +14,12 @@ const iconstyle = {
 
 const Todolists = ({ todos: { data, id } }) => {
   const [decorate, setDec] = useState(false);
+  const { deleteTodo } = useContext(TodoContext);
 
   const handleChecked = () => setDec(!decorate);
   //delete todo
-  const deleteTodo = () => {
-    console.log(id);
+  const deletetodo = () => {
+    deleteTodo(id);
   };
   return (
     <CardBox>
@@ -54,7 +56,7 @@ const Todolists = ({ todos: { data, id } }) => {
               sx={iconstyle}
               style={{ marginRight: "1.4rem", stroke: "red" }}
               titleAccess="Delete"
-              onClick={deleteTodo}
+              onClick={deletetodo}
             />
             <Edit
               sx={iconstyle}

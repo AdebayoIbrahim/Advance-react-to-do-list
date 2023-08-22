@@ -8,11 +8,15 @@ export const TodoProvider = ({ children }) => {
   //adding new todos
   const addTodo = (newTodo) => {
     setTodo([...todo, newTodo]);
-    console.log(newTodo);
   };
   //delete todo
   const deleteTodo = (currid) => {
     console.log(currid);
+    setTodo(
+      todo.filter((todos) => {
+        return todos.id !== currid;
+      })
+    );
   };
   return (
     <React.Fragment>

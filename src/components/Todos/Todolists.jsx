@@ -14,7 +14,7 @@ const iconstyle = {
 
 const Todolists = ({ todos: { data, id } }) => {
   const [decorate, setDec] = useState(false);
-  const { deleteTodo } = useContext(TodoContext);
+  const { deleteTodo, addImportant } = useContext(TodoContext);
 
   const handleChecked = () => setDec(!decorate);
   //delete todo
@@ -26,7 +26,14 @@ const Todolists = ({ todos: { data, id } }) => {
   //add to important-section
   const handleStar = () => {
     console.log(data, id);
+    const added = {
+      id,
+      data,
+    };
+    addImportant(added);
+    alert("added To important");
   };
+
   return (
     <CardBox>
       <Stack direction="row" alignItems="center" justifyContent="space-between">

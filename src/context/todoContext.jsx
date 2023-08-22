@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import { Todo, Starred } from "../data/Tododata";
 const TodoContext = createContext();
 
@@ -25,6 +25,9 @@ export const TodoProvider = ({ children }) => {
   const addImportant = (data) => {
     setImp([...important, data]);
   };
+  useEffect(() => {
+    console.log(important);
+  }, [important]);
   return (
     <React.Fragment>
       <TodoContext.Provider

@@ -2,7 +2,13 @@ import React, { useState } from "react";
 import CardBox from "../shared/Card";
 import { Stack, Box, Typography, Checkbox } from "@mui/material";
 import { cyan } from "@mui/material/colors";
-import { Star } from "@mui/icons-material";
+import { Star, Edit, Delete } from "@mui/icons-material";
+
+const iconstyle = {
+  fill: "transparent",
+  strokeWidth: 2,
+  fontSize: ".95rem",
+};
 
 const Todolists = ({ todos: { data } }) => {
   const [decorate, setDec] = useState(false);
@@ -37,16 +43,16 @@ const Todolists = ({ todos: { data } }) => {
             {data}
           </Typography>
         </Stack>
-        <Box>
-          <Star
-            sx={{
-              fill: "transparent",
-              stroke: "cyan",
-              strokeWidth: 2,
-              fontSize: ".95rem",
-            }}
-          />
-        </Box>
+        <Stack direction="row" alignItems="center">
+          <Box mr={5} mt={0.3}>
+            <Delete
+              sx={iconstyle}
+              style={{ marginRight: "1.4rem", stroke: "red" }}
+            />
+            <Edit sx={iconstyle} style={{ stroke: "#90f10a" }} />
+          </Box>
+          <Star sx={iconstyle} style={{ stroke: "cyan" }} />
+        </Stack>
       </Stack>
     </CardBox>
   );

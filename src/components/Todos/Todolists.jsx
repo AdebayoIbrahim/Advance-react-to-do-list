@@ -11,10 +11,14 @@ const iconstyle = {
   cursor: "pointer",
 };
 
-const Todolists = ({ todos: { data } }) => {
+const Todolists = ({ todos: { data, id } }) => {
   const [decorate, setDec] = useState(false);
 
   const handleChecked = () => setDec(!decorate);
+  //delete todo
+  const deleteTodo = () => {
+    console.log(id);
+  };
   return (
     <CardBox>
       <Stack direction="row" alignItems="center" justifyContent="space-between">
@@ -50,6 +54,7 @@ const Todolists = ({ todos: { data } }) => {
               sx={iconstyle}
               style={{ marginRight: "1.4rem", stroke: "red" }}
               titleAccess="Delete"
+              onClick={deleteTodo}
             />
             <Edit
               sx={iconstyle}

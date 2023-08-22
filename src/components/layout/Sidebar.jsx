@@ -61,6 +61,20 @@ export default function Sidebar() {
               <FaStar fontSize="16px" fill="#ebda0b" />
             </ListItemIcon>
             <ListText primary="Important" />
+            <Box component="span" sx={{ textAlign: "right" }}>
+              <Badge
+                badgeContent={todo.length}
+                sx={{
+                  color: "#e2e509",
+                  "& .MuiBadge-badge": {
+                    backgroundColor: "#686868",
+                    width: 20,
+                    height: 20,
+                    borderRadius: "50%",
+                  },
+                }}
+              />
+            </Box>
           </ListItemButton>
         </Listitem>
         <Listitem disablePadding={true} mt={2}>

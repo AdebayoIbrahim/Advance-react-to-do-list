@@ -12,4 +12,6 @@ const Todo = [
     data: "Working and Fixing Bugs In Codes!",
   },
 ];
-export default Todo;
+
+const Starred = [];
+export { Todo, Starred };

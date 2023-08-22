@@ -1,9 +1,11 @@
 import React, { createContext, useState } from "react";
-import Todo from "../data/Tododata";
+import { Todo, Starred } from "../data/Tododata";
 const TodoContext = createContext();
 
 export const TodoProvider = ({ children }) => {
   const [todo, setTodo] = useState(Todo);
+  //starred
+  const [important, setImp] = useState(Starred);
 
   //adding new todos
   const addTodo = (newTodo) => {
@@ -25,6 +27,7 @@ export const TodoProvider = ({ children }) => {
           todo,
           addTodo,
           deleteTodo,
+          important,
         }}
       >
         {children}

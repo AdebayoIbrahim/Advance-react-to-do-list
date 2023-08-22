@@ -22,6 +22,11 @@ const Todolists = ({ todos: { data, id } }) => {
     window.confirm("Are You Sure You Want to delete this item") &&
       deleteTodo(id);
   };
+
+  //add to important-section
+  const handleStar = () => {
+    console.log(data, id);
+  };
   return (
     <CardBox>
       <Stack direction="row" alignItems="center" justifyContent="space-between">
@@ -65,7 +70,12 @@ const Todolists = ({ todos: { data, id } }) => {
               titleAccess="Edit"
             />
           </Box>
-          <Star sx={iconstyle} style={{ stroke: "cyan" }} titleAccess="Star" />
+          <Star
+            sx={iconstyle}
+            style={{ stroke: "cyan" }}
+            titleAccess="Star"
+            onClick={handleStar}
+          />
         </Stack>
       </Stack>
     </CardBox>

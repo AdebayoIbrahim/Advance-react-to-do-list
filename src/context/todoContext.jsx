@@ -13,7 +13,7 @@ export const TodoProvider = ({ children }) => {
   };
   //delete todo
   const deleteTodo = (currid) => {
-    console.log(currid);
+    // console.log(currid);
     setTodo(
       todo.filter((todos) => {
         return todos.id !== currid;
@@ -33,6 +33,17 @@ export const TodoProvider = ({ children }) => {
       edit: true,
     });
   };
+  const updateTodo = (id, updTodo) => {
+    setTodo(
+      todo.map((todos) => {
+        if (todos.id === id) {
+          return { ...todos, ...updTodo };
+        } else {
+          return todos;
+        }
+      })
+    );
+  };
   //add important/starred arrays
   const addImportant = (data) => {
     setImp([...important, data]);
@@ -49,6 +60,7 @@ export const TodoProvider = ({ children }) => {
           deleteTodo,
           addImportant,
           editTodo,
+          updateTodo,
         }}
       >
         {children}

@@ -9,7 +9,7 @@ const Todoform = () => {
   const [icon, setIcon] = useState(true);
   const [val, setVal] = useState("");
 
-  const { addTodo, todoEdit } = useContext(TodoContext);
+  const { addTodo, todoEdit, updateTodo } = useContext(TodoContext);
   //todoedit
   useEffect(() => {
     if (todoEdit.edit) {
@@ -46,7 +46,8 @@ const Todoform = () => {
         id: window.crypto.randomUUID(),
         data: val,
       };
-      addTodo(newTodo);
+
+      todoEdit.edit ? updateTodo(todoEdit.id, newTodo) : addTodo(newTodo);
     }
     setVal("");
   };

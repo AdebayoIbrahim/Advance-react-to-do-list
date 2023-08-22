@@ -27,7 +27,7 @@ const Listitem = styled(ListItem)({
   "&:hover": { background: "rgb(61 56 56 / .8)" },
 });
 export default function Sidebar() {
-  const { todo } = useContext(TodoContext);
+  const { todo, important } = useContext(TodoContext);
   return (
     <Box
       pl={0.6}
@@ -62,18 +62,20 @@ export default function Sidebar() {
             </ListItemIcon>
             <ListText primary="Important" />
             <Box component="span" sx={{ textAlign: "right" }}>
-              <Badge
-                badgeContent={todo.length}
-                sx={{
-                  color: "#e2e509",
-                  "& .MuiBadge-badge": {
-                    backgroundColor: "#686868",
-                    width: 20,
-                    height: 20,
-                    borderRadius: "50%",
-                  },
-                }}
-              />
+              {important.length < 1 ? null : (
+                <Badge
+                  badgeContent={important.length}
+                  sx={{
+                    color: "#e2e509",
+                    "& .MuiBadge-badge": {
+                      backgroundColor: "#686868",
+                      width: 20,
+                      height: 20,
+                      borderRadius: "50%",
+                    },
+                  }}
+                />
+              )}
             </Box>
           </ListItemButton>
         </Listitem>
@@ -99,20 +101,22 @@ export default function Sidebar() {
               <FaHome fontSize="16px" fill="#215ce1" />
             </ListItemIcon>
             <ListText primary="Tasks" />
-            <Box component="span" sx={{ textAlign: "right" }}>
-              <Badge
-                badgeContent={todo.length}
-                sx={{
-                  color: "#e2e509",
-                  "& .MuiBadge-badge": {
-                    backgroundColor: "#686868",
-                    width: 20,
-                    height: 20,
-                    borderRadius: "50%",
-                  },
-                }}
-              />
-            </Box>
+            {todo.length < 1 ? null : (
+              <Box component="span" sx={{ textAlign: "right" }}>
+                <Badge
+                  badgeContent={todo.length}
+                  sx={{
+                    color: "#e2e509",
+                    "& .MuiBadge-badge": {
+                      backgroundColor: "#686868",
+                      width: 20,
+                      height: 20,
+                      borderRadius: "50%",
+                    },
+                  }}
+                />
+              </Box>
+            )}
           </ListItemButton>
         </Listitem>
       </List>

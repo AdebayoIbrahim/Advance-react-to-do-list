@@ -25,9 +25,7 @@ export const TodoProvider = ({ children }) => {
   const addImportant = (data) => {
     setImp([...important, data]);
   };
-  useEffect(() => {
-    console.log(important);
-  }, [important]);
+
   return (
     <React.Fragment>
       <TodoContext.Provider

@@ -8,6 +8,7 @@ const iconstyle = {
   fill: "transparent",
   strokeWidth: 2,
   fontSize: ".95rem",
+  cursor: "pointer",
 };
 
 const Todolists = ({ todos: { data } }) => {
@@ -48,10 +49,15 @@ const Todolists = ({ todos: { data } }) => {
             <Delete
               sx={iconstyle}
               style={{ marginRight: "1.4rem", stroke: "red" }}
+              titleAccess="Delete"
             />
-            <Edit sx={iconstyle} style={{ stroke: "#90f10a" }} />
+            <Edit
+              sx={iconstyle}
+              style={{ stroke: "#90f10a" }}
+              titleAccess="Edit"
+            />
           </Box>
-          <Star sx={iconstyle} style={{ stroke: "cyan" }} />
+          <Star sx={iconstyle} style={{ stroke: "cyan" }} titleAccess="Star" />
         </Stack>
       </Stack>
     </CardBox>

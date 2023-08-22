@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Box, TextField } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import { Add, Circle } from "@mui/icons-material";
@@ -9,7 +9,11 @@ const Todoform = () => {
   const [icon, setIcon] = useState(true);
   const [val, setVal] = useState("");
 
-  const { addTodo } = useContext(TodoContext);
+  const { addTodo, todoEdit } = useContext(TodoContext);
+  //todoedit
+  useEffect(() => {
+    todoEdit.edit && setVal(todoEdit.item);
+  }, [todoEdit]);
   //focusable
   const setFocusable = () => {
     setPlaceholder("Try Typing 'Studying by 10am'");

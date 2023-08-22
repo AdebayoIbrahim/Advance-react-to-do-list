@@ -14,7 +14,7 @@ const iconstyle = {
 
 const Todolists = ({ todos: { data, id } }) => {
   const [decorate, setDec] = useState(false);
-  const { deleteTodo, addImportant } = useContext(TodoContext);
+  const { deleteTodo, addImportant, editTodo } = useContext(TodoContext);
 
   const handleChecked = () => setDec(!decorate);
   //delete todo
@@ -75,6 +75,7 @@ const Todolists = ({ todos: { data, id } }) => {
               sx={iconstyle}
               style={{ stroke: "#90f10a" }}
               titleAccess="Edit"
+              onClick={() => editTodo(data, id)}
             />
           </Box>
           <Star

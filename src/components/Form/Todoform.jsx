@@ -12,7 +12,10 @@ const Todoform = () => {
   const { addTodo, todoEdit } = useContext(TodoContext);
   //todoedit
   useEffect(() => {
-    todoEdit.edit && setVal(todoEdit.item);
+    if (todoEdit.edit) {
+      setVal(todoEdit.item);
+      setFocusable();
+    }
   }, [todoEdit]);
   //focusable
   const setFocusable = () => {

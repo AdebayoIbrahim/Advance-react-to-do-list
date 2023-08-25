@@ -9,6 +9,7 @@ import {
   Box,
   Badge,
 } from "@mui/material";
+import { Link } from "react-router-dom";
 import {
   FaSun,
   FaStar,
@@ -48,7 +49,7 @@ export default function Sidebar() {
     >
       <List>
         <Listitem disablePadding={true} mt={2}>
-          <ListItemButton component="a" href="#">
+          <ListItemButton component={Link} to="/">
             <ListItemIcon sx={{ color: "white" }}>
               <FaSun fontSize="16px" fill="cyan" />
             </ListItemIcon>
@@ -56,7 +57,7 @@ export default function Sidebar() {
           </ListItemButton>
         </Listitem>
         <Listitem disablePadding={true} mt={2}>
-          <ListItemButton component="a" href="#">
+          <ListItemButton component={Link} to="/important">
             <ListItemIcon sx={{ color: "white" }}>
               <FaStar fontSize="16px" fill="#ebda0b" />
             </ListItemIcon>
@@ -80,7 +81,7 @@ export default function Sidebar() {
           </ListItemButton>
         </Listitem>
         <Listitem disablePadding={true} mt={2}>
-          <ListItemButton component="a" href="#">
+          <ListItemButton component={Link} to="/planned">
             <ListItemIcon sx={{ color: "white" }}>
               <FaPaperclip fontSize="16px" fill="#1de11a" />
             </ListItemIcon>
@@ -88,7 +89,7 @@ export default function Sidebar() {
           </ListItemButton>
         </Listitem>
         <Listitem disablePadding={true} mt={2}>
-          <ListItemButton component="a" href="#">
+          <ListItemButton component={Link} to="/assigned">
             <ListItemIcon sx={{ color: "white" }}>
               <FaPersonBooth fontSize="16px" fill="#f74f0f" />
             </ListItemIcon>
@@ -96,7 +97,7 @@ export default function Sidebar() {
           </ListItemButton>
         </Listitem>
         <Listitem disablePadding={true} mt={2}>
-          <ListItemButton component="a" href="#">
+          <ListItemButton component={Link} to="/tasks">
             <ListItemIcon sx={{ color: "white" }}>
               <FaHome fontSize="16px" fill="#215ce1" />
             </ListItemIcon>

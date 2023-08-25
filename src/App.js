@@ -27,7 +27,7 @@ const App = () => {
               <Route path="/" element={<Home />} />
               <Route path="/important" element={<Important />} />
               <Route path="/planned" element={<Planned />} />
-              <Route path="/asssgned?to='me'" element={<Assigned />} />
+              <Route path="/asssgned'" element={<Assigned />} />
               <Route path="/tasks" element={<Tasks />} />
             </Routes>
           </Box>

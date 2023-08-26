@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Typography, Box, Stack } from "@mui/material";
 import Body from "../components/shared/Body";
 import { MoreVert } from "@mui/icons-material";
 import Tooltip from "../components/fastcontent";
 import Todoform from "../components/Form/Todoform";
+import TodoContext from "../context/todoContext";
 function Important() {
+  const { important } = useContext(TodoContext);
   return (
     <Body>
       <Box>
@@ -19,9 +21,11 @@ function Important() {
           </Box>
         </Stack>
       </Box>
-      <Box sx={{ alignSelf: "center" }}>
-        <Tooltip />
-      </Box>
+      {important.length <= 0 && (
+        <Box sx={{ alignSelf: "center" }}>
+          <Tooltip />
+        </Box>
+      )}
       <Box>
         <Todoform />
       </Box>

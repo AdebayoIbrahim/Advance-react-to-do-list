@@ -45,7 +45,9 @@ function Main() {
               </Typography>
             </Box>
             <Box>
-              <MoreVert sx={{ transform: "rotate(90deg)" }} />
+              <MoreVert
+                sx={{ transform: "rotate(90deg)", cursor: "pointer" }}
+              />
             </Box>
           </Stack>
         </Box>

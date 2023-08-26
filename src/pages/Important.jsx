@@ -3,7 +3,7 @@ import { Typography, Box, Stack } from "@mui/material";
 import Body from "../components/shared/Body";
 import { MoreVert } from "@mui/icons-material";
 import { FaStar } from "react-icons/fa";
-import Tooltip from "../components/fastcontent";
+import { Importanttip } from "../components/fastcontent";
 import Todoform from "../components/Form/Todoform";
 import TodoContext from "../context/todoContext";
 function Important() {
@@ -25,7 +25,7 @@ function Important() {
       </Box>
       {important.length <= 0 && (
         <Box sx={{ alignSelf: "center" }}>
-          <Tooltip />
+          <Importanttip />
         </Box>
       )}
       <Box>

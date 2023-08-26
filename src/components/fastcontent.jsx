@@ -29,5 +29,33 @@ function Tooltip() {
     </Box>
   );
 }
+function Importanttip() {
+  return (
+    <Box
+      sx={{
+        width: "15em",
+        padding: "1rem .8rem .8rem",
+        borderRadius: "10px",
+        background: "rgb(0 0 0 / .5)",
+        textAlign: "center",
+        lineHeight: "0 !important",
+      }}
+    >
+      <img
+        src={notebook}
+        alt="notebook"
+        width={80}
+        height={80}
+        style={{ marginBlock: ".8rem" }}
+      />
+      <Typography component="h1" pt={1} pb={1} fontSize={20} fontWeight={450}>
+        Focus On Your Day
+      </Typography>{" "}
+      <Typography variant="caption">
+        Try Starring Some tasks to see them here
+      </Typography>
+    </Box>
+  );
+}
 
-export default Tooltip;
+export { Tooltip, Importanttip };

@@ -4,7 +4,7 @@ import { MoreVert } from "@mui/icons-material";
 import bg from "../assets/all-from-one-place.jpg";
 import { Month, Weeks } from "../../datearray.js";
 import Todoform from "../Form/Todoform";
-import Tooltip from "../fastcontent";
+import { Tooltip } from "../fastcontent";
 import TodoContext from "../../context/todoContext";
 import Todolists from "../Todos/Todolists";
 

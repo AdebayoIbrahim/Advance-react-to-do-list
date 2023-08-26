@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
 import notebook from "./assets/notbook.png";
+import impnote from "./assets/impo.png";
 function Tooltip() {
   return (
     <Box
@@ -42,11 +43,11 @@ function Importanttip() {
       }}
     >
       <img
-        src={notebook}
+        src={impnote}
         alt="notebook"
-        width={80}
-        height={80}
-        style={{ marginBlock: ".8rem" }}
+        width={85}
+        height={85}
+        style={{ marginBlock: ".8rem", transform: "rotate(.10turn)" }}
       />
       <Typography
         component="h1"

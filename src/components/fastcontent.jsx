@@ -36,7 +36,7 @@ function Importanttip() {
         width: "15em",
         padding: "1rem .8rem .8rem",
         borderRadius: "10px",
-        background: "rgb(0 0 0 / .5)",
+        background: "transparent",
         textAlign: "center",
         lineHeight: "0 !important",
       }}
@@ -48,10 +48,14 @@ function Importanttip() {
         height={80}
         style={{ marginBlock: ".8rem" }}
       />
-      <Typography component="h1" pt={1} pb={1} fontSize={20} fontWeight={450}>
-        Focus On Your Day
-      </Typography>{" "}
-      <Typography variant="caption">
+      <Typography
+        component="h1"
+        pt={1}
+        pb={1}
+        fontSize={20}
+        fontWeight={450}
+      ></Typography>{" "}
+      <Typography variant="caption" sx={{ color: "inherit" }}>
         Try Starring Some tasks to see them here
       </Typography>
     </Box>

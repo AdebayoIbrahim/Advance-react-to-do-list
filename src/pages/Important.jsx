@@ -24,7 +24,7 @@ function Important() {
         </Stack>
       </Box>
       {important.length <= 0 && (
-        <Box sx={{ alignSelf: "center" }}>
+        <Box sx={{ alignSelf: "center", color: "#ebda0b" }}>
           <Importanttip />
         </Box>
       )}

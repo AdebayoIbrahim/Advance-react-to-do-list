@@ -1,5 +1,6 @@
 import React from "react";
-import { Box, Stack } from "@mui/material";
+import { Stack } from "@mui/material";
+
 const Body = ({ children }) => {
   return (
     <React.Fragment>
@@ -13,7 +14,7 @@ const Body = ({ children }) => {
         sx={{
           width: "100%",
           height: "100vh",
-          background: "#212121",
+          background: "#201818",
           backgroundSize: "cover",
           overflow: "auto !important",
         }}

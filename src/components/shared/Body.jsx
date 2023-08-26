@@ -14,14 +14,12 @@ const Body = ({ children }) => {
         sx={{
           width: "100%",
           height: "100vh",
-          background: "#201818",
-          backgroundSize: "cover",
+          background: "#1e1e1e",
           overflow: "auto !important",
         }}
       >
         {children}
       </Stack>
-      ;
     </React.Fragment>
   );
 };

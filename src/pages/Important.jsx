@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Typography, Box, Stack } from "@mui/material";
 import Body from "../components/shared/Body";
 import { MoreVert } from "@mui/icons-material";
+import { FaStar } from "react-icons/fa";
 import Tooltip from "../components/fastcontent";
 import Todoform from "../components/Form/Todoform";
 import TodoContext from "../context/todoContext";
@@ -12,8 +13,9 @@ function Important() {
       <Box>
         <Stack direction="row" justifyContent="space-between">
           <Box>
-            <Typography component="h1" fontSize={28} fontWeight={500}>
-              Important
+            <Typography component="h1" fontSize={25} fontWeight={400}>
+              <FaStar fill="#ebda0b" fontSize="20px" />
+              <span style={{ marginLeft: "1rem" }}>Important</span>
             </Typography>{" "}
           </Box>
           <Box>

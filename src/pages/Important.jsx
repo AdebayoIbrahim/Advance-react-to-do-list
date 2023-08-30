@@ -24,6 +24,21 @@ function Important() {
           </Box>
         </Stack>
       </Box>
+      {important.length > 0 && (
+        <Box
+          sx={{
+            height: "auto !important",
+            overflow: "auto !important",
+          }}
+          mt={2.5}
+          pb={1}
+          mb={1}
+        >
+          {important.map((todos, indx) => {
+            return <Todolists key={indx} todos={todos} />;
+          })}
+        </Box>
+      )}
       {important.length <= 0 && (
         <Box sx={{ alignSelf: "center", color: "#ebda0b" }}>
           <Importanttip />

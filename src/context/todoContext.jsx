@@ -11,6 +11,10 @@ export const TodoProvider = ({ children }) => {
   const addTodo = (newTodo) => {
     setTodo([...todo, newTodo]);
   };
+  //adding important  new todos
+  const fillImportant = (newTodo) => {
+    setTodo([...important, newTodo]);
+  };
   //delete todo
   const deleteTodo = (currid) => {
     // console.log(currid);
@@ -61,6 +65,7 @@ export const TodoProvider = ({ children }) => {
           addImportant,
           editTodo,
           updateTodo,
+          fillImportant,
         }}
       >
         {children}

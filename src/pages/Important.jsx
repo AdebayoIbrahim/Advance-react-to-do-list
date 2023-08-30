@@ -36,7 +36,4 @@ function Important() {
   );
 }
 
-Important.defaultProps = {
-  aspect: "important",
-};
 export default Important;

@@ -4,7 +4,7 @@ import { grey } from "@mui/material/colors";
 import { Add, Circle } from "@mui/icons-material";
 import { InputAdornment } from "@mui/material";
 import TodoContext from "../../context/todoContext";
-const Todoform = () => {
+const Todoform = (props) => {
   const [placeholder, setPlaceholder] = useState("Add a task");
   const [icon, setIcon] = useState(true);
   const [val, setVal] = useState("");
@@ -38,6 +38,9 @@ const Todoform = () => {
   //submittion
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (props.name === "edit") {
+      console.log("getting");
+    }
     if (val.trim().length < 1) {
       alert("Please input Your Tasks");
       return;

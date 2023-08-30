@@ -8,6 +8,7 @@ import Todoform from "../components/Form/Todoform";
 import TodoContext from "../context/todoContext";
 function Important() {
   const { important } = useContext(TodoContext);
+
   return (
     <Body>
       <Box>
@@ -29,10 +30,13 @@ function Important() {
         </Box>
       )}
       <Box>
-        <Todoform />
+        <Todoform name="edit" />
       </Box>
     </Body>
   );
 }
 
+Important.defaultProps = {
+  aspect: "important",
+};
 export default Important;

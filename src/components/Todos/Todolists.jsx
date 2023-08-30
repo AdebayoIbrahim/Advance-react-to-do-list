@@ -14,6 +14,7 @@ const iconstyle = {
 
 const Todolists = ({ todos: { data, id } }) => {
   const [decorate, setDec] = useState(false);
+  const [Stroke, setStoke] = useState(false);
   const { deleteTodo, addImportant, editTodo } = useContext(TodoContext);
 
   const handleChecked = () => setDec(!decorate);
@@ -31,6 +32,7 @@ const Todolists = ({ todos: { data, id } }) => {
       data,
     };
     addImportant(added);
+    setStoke(!Stroke);
     alert("added To important");
   };
 
@@ -80,7 +82,7 @@ const Todolists = ({ todos: { data, id } }) => {
           </Box>
           <Star
             sx={iconstyle}
-            style={{ stroke: "cyan" }}
+            style={{ stroke: Stroke ? "" : "cyan", fill: Stroke ? "cyan" : "" }}
             titleAccess="Star"
             onClick={handleStar}
           />

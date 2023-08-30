@@ -53,7 +53,7 @@ const Importantlist = ({ todos: { data, id } }) => {
           </Typography>
         </Stack>
         <Stack direction="row" alignItems="center">
-          <Box mr={5} mt={0.3}>
+          <Box mr={1} mt={0.3}>
             <Delete sx={iconstyle} titleAccess="Delete" onClick={deletetodo} />
           </Box>
           <Star

@@ -11,7 +11,7 @@ export const TodoProvider = ({ children }) => {
   const addTodo = (newTodo) => {
     setTodo([...todo, newTodo]);
   };
-  //adding important  new todos
+  //adding important manually new todos
   const fillImportant = (newTodo) => {
     setImp([...important, newTodo]);
   };
@@ -20,6 +20,15 @@ export const TodoProvider = ({ children }) => {
     // console.log(currid);
     setTodo(
       todo.filter((todos) => {
+        return todos.id !== currid;
+      })
+    );
+  };
+  //starred todos deletion functionality
+  const deleteImp = (currid) => {
+    // console.log(currid);
+    setImp(
+      important.filter((todos) => {
         return todos.id !== currid;
       })
     );
@@ -66,6 +75,7 @@ export const TodoProvider = ({ children }) => {
           editTodo,
           updateTodo,
           fillImportant,
+          deleteImp,
         }}
       >
         {children}

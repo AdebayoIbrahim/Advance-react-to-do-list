@@ -4,6 +4,7 @@ import Body from "../components/shared/Body";
 import { MoreVert } from "@mui/icons-material";
 import { FaStar } from "react-icons/fa";
 import { Importanttip } from "../components/fastcontent";
+import Importantlist from "../components/Todos/importantTodo";
 import Todoform from "../components/Form/Todoform";
 import TodoContext from "../context/todoContext";
 function Important() {
@@ -35,7 +36,7 @@ function Important() {
           mb={1}
         >
           {important.map((todos, indx) => {
-            return <Todolists key={indx} todos={todos} />;
+            return <Importantlist key={indx} todos={todos} />;
           })}
         </Box>
       )}

@@ -16,12 +16,12 @@ const iconstyle = {
 
 const Importantlist = ({ todos: { data, id } }) => {
   const [decorate, setDec] = useState(false);
-  const { deleteTodo } = useContext(TodoContext);
+  const { deleteImp } = useContext(TodoContext);
   const handleChecked = () => setDec(!decorate);
   //delete todo
   const deletetodo = () => {
     window.confirm("Are You Sure You Want to delete this item") &&
-      deleteTodo(id);
+      deleteImp(id);
   };
   return (
     <CardBox>

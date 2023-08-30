@@ -13,7 +13,7 @@ export const TodoProvider = ({ children }) => {
   };
   //adding important  new todos
   const fillImportant = (newTodo) => {
-    setTodo([...important, newTodo]);
+    setImp([...important, newTodo]);
   };
   //delete todo
   const deleteTodo = (currid) => {

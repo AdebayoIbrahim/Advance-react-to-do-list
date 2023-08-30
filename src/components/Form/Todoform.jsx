@@ -9,7 +9,8 @@ const Todoform = (props) => {
   const [icon, setIcon] = useState(true);
   const [val, setVal] = useState("");
 
-  const { addTodo, todoEdit, updateTodo } = useContext(TodoContext);
+  const { addTodo, todoEdit, updateTodo, fillImportant } =
+    useContext(TodoContext);
   //todoedit
   useEffect(() => {
     if (todoEdit.edit) {
@@ -38,9 +39,6 @@ const Todoform = (props) => {
   //submittion
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (props.name === "edit") {
-      console.log("getting");
-    }
     if (val.trim().length < 1) {
       alert("Please input Your Tasks");
       return;
@@ -50,7 +48,13 @@ const Todoform = (props) => {
         data: val,
       };
 
-      todoEdit.edit ? updateTodo(todoEdit.id, newTodo) : addTodo(newTodo);
+      if (todoEdit.edit) {
+        updateTodo(todoEdit.id, newTodo);
+      } else if (props.name === "edit") {
+        fillImportant(newTodo);
+      } else {
+        addTodo(newTodo);
+      }
     }
     setVal("");
   };

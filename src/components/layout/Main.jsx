@@ -36,7 +36,7 @@ function Main() {
       >
         <Box>
           <Stack direction="row" justifyContent="space-between">
-            <Box>
+            <Box sx={{ color: "white" }}>
               <Typography component="h1" fontSize={28} fontWeight={500}>
                 My Day
               </Typography>{" "}

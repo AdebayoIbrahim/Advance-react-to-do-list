@@ -15,7 +15,7 @@ export const TodoProvider = ({ children }) => {
   const fillImportant = (newTodo) => {
     setImp([...important, newTodo]);
   };
-  //delete todo
+  //delete Created todo in app
   const deleteTodo = (currid) => {
     // console.log(currid);
     setTodo(

@@ -66,6 +66,7 @@ function Main() {
             })}
           </Box>
         )}
+         //for handling empty task array
         {todo.length <= 0 && (
           <Box sx={{ alignSelf: "center" }}>
             <Tooltip />

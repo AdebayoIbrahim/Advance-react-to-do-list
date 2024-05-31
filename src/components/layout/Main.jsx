@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Typography, Box, Stack } from "@mui/material";
+import { Typography, Box, MenuItem, Stack, Button, Menu } from "@mui/material";
 import { MoreVert } from "@mui/icons-material";
 import bg from "../assets/all-from-one-place.jpg";
 import { Month, Weeks } from "../../datearray.js";
@@ -16,6 +16,15 @@ function Main() {
   } ${new Date().getDate()}`;
 
   //handling empty data
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   return (
     <>
@@ -46,9 +55,31 @@ function Main() {
               </Typography>
             </Box>
             <Box>
-              <MoreVert
-                sx={{ transform: "rotate(90deg)", cursor: "pointer" }}
-              />
+              {/* clicking-menu-drop-down */}
+
+              <Box
+                sx={{ color: "#ffff", background: "transparent" }}
+                id="basic-button"
+                aria-controls={open ? "basic-menu" : undefined}
+                aria-haspopup="true"
+                aria-expanded={open ? "true" : undefined}
+                onClick={handleClick}
+              >
+                <MoreVert
+                  sx={{ transform: "rotate(90deg)", cursor: "pointer" }}
+                />
+              </Box>
+              <Menu
+                id="basic-menu"
+                anchorEl={anchorEl}
+                open={open}
+                onClose={handleClose}
+                MenuListProps={{
+                  "aria-labelledby": "basic-button",
+                }}
+              >
+                <Box sx={{ width: "300px" }}></Box>
+              </Menu>
             </Box>
           </Stack>
         </Box>

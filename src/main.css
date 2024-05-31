@@ -81,3 +81,7 @@ label {
   /* padding: 0 !important; */
   /* aspect-ratio: 1 / 1 !important; */
 }
+
+.MuiPopover-paper {
+  background: var(--side-body) !important;
+}

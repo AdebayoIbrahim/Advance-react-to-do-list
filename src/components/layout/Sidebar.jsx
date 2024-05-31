@@ -19,6 +19,7 @@ import { CiUser } from "react-icons/ci";
 import TodoContext from "../../context/todoContext";
 import Pic from "../../components/assets/IMG_20230802_165219_3~2.jpg";
 import { CiStar } from "react-icons/ci";
+
 const ListText = styled(ListItemText)({
   color: "white",
   marginLeft: "-20px",
@@ -71,9 +72,21 @@ export default function Sidebar() {
           <Typography variant="body2">Abdulmumeen Ibrahim</Typography>
 
           {/* check if user is online or not */}
-          <Typography variant="caption">
-            {navigator.onLine ? "You are online" : "You are offline  ..."}
-          </Typography>
+          <Stack
+            direction={"row"}
+            justifyContent={"start"}
+            gap={0.1}
+            alignItems={"center"}
+          >
+            <div
+              className="badge_status"
+              style={{ background: navigator.onLine ? "green" : "#c3c330" }}
+              // sx={{ backgroundColor: "red" }}
+            ></div>
+            <Typography variant="caption">
+              {navigator.onLine ? "You are online" : "You are offline  ..."}
+            </Typography>
+          </Stack>
         </Stack>
       </Stack>
 

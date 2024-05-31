@@ -27,7 +27,7 @@ const Todoform = (props) => {
   const handleChange = (e) => {
     setVal(e.target.value);
   };
-  //focus out
+  //focus out event or using manual listener
   window.addEventListener("click", (e) => {
     if (!e.target.matches("input")) {
       if (placeholder !== "Add a task") {

@@ -78,7 +78,7 @@ function Main() {
                   "aria-labelledby": "basic-button",
                 }}
               >
-                <Box sx={{ width: "300px" }} pl={2}>
+                <Box sx={{ width: "300px" }} p={2}>
                   <Dropdowncontent />
                 </Box>
               </Menu>

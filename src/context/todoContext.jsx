@@ -62,6 +62,14 @@ export const TodoProvider = ({ children }) => {
     setImp([...important, data]);
   };
 
+  // contxet_func_for-current-backgrond
+  const [current, setBg] = useState(0);
+
+  // updateBg
+  const handleBg = (payload) => {
+    setBg(payload);
+  };
+
   return (
     <React.Fragment>
       <TodoContext.Provider
@@ -69,6 +77,7 @@ export const TodoProvider = ({ children }) => {
           todo,
           important,
           todoEdit,
+          current,
           addTodo,
           deleteTodo,
           addImportant,
@@ -76,6 +85,7 @@ export const TodoProvider = ({ children }) => {
           updateTodo,
           fillImportant,
           deleteImp,
+          handleBg,
         }}
       >
         {children}

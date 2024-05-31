@@ -89,3 +89,9 @@ label {
 img {
   object-fit: cover;
 }
+.themes_active {
+  border-radius: 5px;
+}
+.current {
+  border: 2px solid #177fc5;
+}

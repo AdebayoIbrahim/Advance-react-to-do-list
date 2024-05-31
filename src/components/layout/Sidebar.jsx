@@ -85,7 +85,7 @@ export default function Sidebar() {
         >
           <ListItemButton component={Link} to="/">
             <ListItemIcon sx={{ color: "white" }}>
-              <GoSun fontSize="20px" fill="cyan" />
+              <GoSun fontSize="17px" fill="cyan" />
             </ListItemIcon>
             <ListText primary="My Day" />
           </ListItemButton>
@@ -125,7 +125,7 @@ export default function Sidebar() {
         >
           <ListItemButton component={Link} to="/planned">
             <ListItemIcon sx={{ color: "white" }}>
-              <RiTodoLine fontSize="20px" fill="#1de11a" />
+              <RiTodoLine fontSize="17px" fill="#1de11a" />
             </ListItemIcon>
             <ListText primary="Planned" />
           </ListItemButton>

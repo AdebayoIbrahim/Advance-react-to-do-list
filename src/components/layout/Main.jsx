@@ -7,7 +7,7 @@ import Todoform from "../Form/Todoform";
 import { Tooltip } from "../fastcontent";
 import TodoContext from "../../context/todoContext";
 import Todolists from "../Todos/Todolists";
-
+import Dropdowncontent from "../shared/dropdown.jsx";
 function Main() {
   const { todo } = useContext(TodoContext);
   //getting current date
@@ -78,7 +78,9 @@ function Main() {
                   "aria-labelledby": "basic-button",
                 }}
               >
-                <Box sx={{ width: "300px" }}></Box>
+                <Box sx={{ width: "300px" }} pl={2}>
+                  <Dropdowncontent />
+                </Box>
               </Menu>
             </Box>
           </Stack>

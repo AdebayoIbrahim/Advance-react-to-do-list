@@ -83,5 +83,9 @@ label {
 }
 
 .MuiPopover-paper {
-  background: var(--side-body) !important;
+  background: rgb(58, 55, 55) !important;
+}
+
+img {
+  object-fit: cover;
 }

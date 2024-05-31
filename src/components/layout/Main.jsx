@@ -32,6 +32,7 @@ function Main() {
           background: `url(${bg})`,
           backgroundSize: "cover",
           overflow: "auto !important",
+          borderRadius: "15px 15px 0 0 ",
         }}
       >
         <Box>
@@ -66,7 +67,7 @@ function Main() {
             })}
           </Box>
         )}
-{/*          for handling empty task array */}
+        {/*          for handling empty task array */}
         {todo.length <= 0 && (
           <Box sx={{ alignSelf: "center" }}>
             <Tooltip />

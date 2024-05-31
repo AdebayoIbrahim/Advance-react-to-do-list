@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sora:wght@100..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sora:wght@100..800&display=swap");
 
-* { 
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Sora, Poppins, Roboto, Source Sans Pro !important;
+  font-family: Sora, Urbanist, Poppins, Roboto, Source Sans Pro !important;
 }
 
 /* html {
@@ -12,6 +12,8 @@
 } */
 :root {
   --black: #202142;
+  --side-body: #212121;
+  --hover-side-bar-active: rgb(61 56 56 / 0.8);
 }
 
 .image-item {
@@ -22,6 +24,7 @@
 }
 body {
   color: white;
+  background: var(--side-body);
 }
 
 .css-10hburv-MuiTypography-root {
@@ -47,4 +50,23 @@ label {
   font-size: 12.5px !important;
 }
 
+.active_nav {
+  background: var(--hover-side-bar-active);
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 55%;
+    border-radius: 0.5rem;
+    left: 0;
+    background: turquoise;
+  }
+}
 /* checking for checked */
+
+/* overide-mui-padding- */
+.MuiListItemButton-root {
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+}

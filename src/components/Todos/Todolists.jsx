@@ -48,7 +48,7 @@ const Todolists = ({ todos: { data, id } }) => {
             sx={{
               display: "inline-block !important",
               padding: "0 !important",
-              marginTop: "8px !important",
+              marginTop: "4px !important",
               color: cyan[200],
               "&.Mui-checked": {
                 color: cyan[200],

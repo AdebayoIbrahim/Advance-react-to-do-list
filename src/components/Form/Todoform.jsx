@@ -90,7 +90,7 @@ const Todoform = (props) => {
           sx={{
             background: `${grey[900]} `,
             borderRadius: ".3rem !important",
-            "&:hover": { background: `${grey[800]} ` },
+            "&:hover": { background: `rgb(61 56 56 / .8)` },
           }}
         />
       </Box>

@@ -62,7 +62,7 @@ export const TodoProvider = ({ children }) => {
     setImp([...important, data]);
   };
 
-  // contxet_func_for-current-backgrond
+  // context-function-for-current-background
   const [current, setBg] = useState(0);
 
   // updateBg

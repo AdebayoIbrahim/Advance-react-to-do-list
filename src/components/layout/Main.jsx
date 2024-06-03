@@ -42,7 +42,7 @@ function Main() {
           background: `url(${bgArr[current].image})`,
           backgroundSize: "cover",
           overflow: "auto !important",
-          borderRadius: "15px 15px 0 0 ",
+          borderRadius: "10px 10px 0 0 ",
         }}
       >
         <Box>
@@ -75,12 +75,14 @@ function Main() {
                 anchorEl={anchorEl}
                 open={open}
                 onClose={handleClose}
+
+
                 MenuListProps={{
                   "aria-labelledby": "basic-button",
                 }}
               >
-                <Box sx={{ width: "300px" }} p={2}>
-                  <DropdownContent />
+                <Box sx={{ width: "250px" }} p={2}>
+                  <DropdownContent close = {handleClose}/>
                 </Box>
               </Menu>
             </Box>

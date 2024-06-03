@@ -3,10 +3,10 @@ import { Typography, Grid } from "@mui/material";
 import bgArr from "../../data/bgArray";
 import { useContext } from "react";
 import TodoContext from "../../context/todoContext";
-const DropdownContent = () => {
+const DropdownContent = ({ close }) => {
   // calling_defined_context
 
-  const { current } = useContext(TodoContext);
+  const { current, handleBg } = useContext(TodoContext);
   // state-to-toggle-current-clicked
   //   const [current, setCurrent] = useState();
 
@@ -14,6 +14,10 @@ const DropdownContent = () => {
   const handleClick = (payload) => {
     const { id } = payload;
     console.log(id);
+
+    // change-current-background
+    handleBg(Number(id - 1));
+    // close();
   };
 
   return (

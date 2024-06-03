@@ -1,9 +1,9 @@
 import { Box } from "@mui/material";
 import { Typography, Grid } from "@mui/material";
 import bgArr from "../../data/bgArray";
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import TodoContext from "../../context/todoContext";
-const Dropdowncontent = () => {
+const DropdownContent = () => {
   // calling_defined_context
 
   const { current } = useContext(TodoContext);
@@ -56,4 +56,4 @@ const Dropdowncontent = () => {
   );
 };
 
-export default Dropdowncontent;
+export default DropdownContent;

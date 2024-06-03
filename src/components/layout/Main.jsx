@@ -7,9 +7,10 @@ import Todoform from "../Form/Todoform";
 import { Tooltip } from "../fastcontent";
 import TodoContext from "../../context/todoContext";
 import Todolists from "../Todos/Todolists";
-import Dropdowncontent from "../shared/dropdown.jsx";
+import DropdownContent from "../shared/dropdown.jsx";
+import bgArr from "../../data/bgArray.js";
 function Main() {
-  const { todo } = useContext(TodoContext);
+  const { todo, current } = useContext(TodoContext);
   //getting current date
   const dateValue = `${Weeks[new Date().getDay()]}, ${
     Month[new Date().getMonth()]
@@ -38,7 +39,7 @@ function Main() {
         sx={{
           width: "100%",
           height: "100vh",
-          background: `url(${bg})`,
+          background: `url(${bgArr[current].image})`,
           backgroundSize: "cover",
           overflow: "auto !important",
           borderRadius: "15px 15px 0 0 ",
@@ -79,7 +80,7 @@ function Main() {
                 }}
               >
                 <Box sx={{ width: "300px" }} p={2}>
-                  <Dropdowncontent />
+                  <DropdownContent />
                 </Box>
               </Menu>
             </Box>

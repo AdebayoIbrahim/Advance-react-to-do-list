@@ -1,30 +1,20 @@
 import React, { useContext } from "react";
-import { Typography, Box, Stack } from "@mui/material";
+import { Box } from "@mui/material";
 import Body from "../components/shared/Body";
-import { MoreVert } from "@mui/icons-material";
-import { FaStar } from "react-icons/fa";
 import { Importanttip } from "../components/fastcontent";
 import Importantlist from "../components/Todos/importantTodo";
 import Todoform from "../components/Form/Todoform";
 import TodoContext from "../context/todoContext";
+import { CiStar } from "react-icons/ci";
 function Important() {
   const { important } = useContext(TodoContext);
 
+  const fillIcon = () => {
+    return <CiStar fontSize="20px" fill="#ebda0b" />;
+  };
+  const title = `Important`;
   return (
-    <Body>
-      <Box>
-        <Stack direction="row" justifyContent="space-between">
-          <Box>
-            <Typography component="h1" fontSize={25} fontWeight={400}>
-              <FaStar fill="#ebda0b" fontSize="20px" />
-              <span style={{ marginLeft: "1rem" }}>Important</span>
-            </Typography>{" "}
-          </Box>
-          <Box>
-            <MoreVert sx={{ transform: "rotate(90deg)", cursor: "pointer" }} />
-          </Box>
-        </Stack>
-      </Box>
+    <Body Starticon={fillIcon} titleText={title}>
       {important.length > 0 && (
         <Box
           sx={{

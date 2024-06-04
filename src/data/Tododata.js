@@ -11,11 +11,12 @@ const Todo = [
     id: 3,
     data: "Working and Fixing Bugs In Codes!",
   },
-{
+  {
     id: 4,
     data: "StandUp Meets",
   },
 ];
 
 const Starred = [];
-export { Todo, Starred };
+const Planned = [];
+export { Todo, Starred, Planned };

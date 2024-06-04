@@ -1,11 +1,12 @@
 import React, { createContext, useState } from "react";
-import { Todo, Starred } from "../data/Tododata";
+import { Todo, Starred, Planned } from "../data/Tododata";
 const TodoContext = createContext();
 
 export const TodoProvider = ({ children }) => {
   const [todo, setTodo] = useState(Todo);
   //starred
   const [important, setImp] = useState(Starred);
+  const [planned, setPlaned] = useState(Planned);
 
   //adding new todos
   const addTodo = (newTodo) => {
@@ -62,6 +63,11 @@ export const TodoProvider = ({ children }) => {
     setImp([...important, data]);
   };
 
+  // add planned
+  const addPlanned = (data) => {
+    setPlaned([...planned, data]);
+  };
+
   // context-function-for-current-background
   const [current, setBg] = useState(0);
 
@@ -78,6 +84,7 @@ export const TodoProvider = ({ children }) => {
           important,
           todoEdit,
           current,
+          planned,
           addTodo,
           deleteTodo,
           addImportant,
@@ -85,6 +92,7 @@ export const TodoProvider = ({ children }) => {
           updateTodo,
           fillImportant,
           deleteImp,
+          addPlanned,
           handleBg,
         }}
       >

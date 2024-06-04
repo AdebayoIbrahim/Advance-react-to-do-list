@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
-import { Typography, Box, MenuItem, Stack, Button, Menu } from "@mui/material";
+import { Typography, Box, MenuItem, Stack, Menu } from "@mui/material";
 import { MoreVert } from "@mui/icons-material";
-import bg from "../assets/all-from-one-place.jpg";
 import { Month, Weeks } from "../../datearray.js";
 import Todoform from "../Form/Todoform";
 import { Tooltip } from "../fastcontent";
@@ -75,14 +74,12 @@ function Main() {
                 anchorEl={anchorEl}
                 open={open}
                 onClose={handleClose}
-
-
                 MenuListProps={{
                   "aria-labelledby": "basic-button",
                 }}
               >
                 <Box sx={{ width: "250px" }} p={2}>
-                  <DropdownContent close = {handleClose}/>
+                  <DropdownContent close={handleClose} />
                 </Box>
               </Menu>
             </Box>

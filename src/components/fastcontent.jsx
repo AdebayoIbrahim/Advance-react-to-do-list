@@ -56,11 +56,44 @@ function Importanttip() {
         fontSize={20}
         fontWeight={450}
       ></Typography>{" "}
-      <Typography variant="caption" sx={{ color: "inherit" }}>
+      <Typography variant="caption" sx={{ color: "#ffff" }}>
         Try Starring Some tasks to see them here
       </Typography>
     </Box>
   );
 }
+// plannedtip
+function Plannedtip() {
+  return (
+    <Box
+      sx={{
+        width: "15em",
+        padding: "1rem .8rem .8rem",
+        borderRadius: "10px",
+        background: "transparent",
+        textAlign: "center",
+        lineHeight: "0 !important",
+      }}
+    >
+      <img
+        src={notebook}
+        alt="notebook"
+        width={85}
+        height={85}
+        style={{ marginBlock: ".8rem", transform: "rotate(.10turn)" }}
+      />
+      <Typography
+        component="h1"
+        pt={1}
+        pb={1}
+        fontSize={20}
+        fontWeight={450}
+      ></Typography>{" "}
+      <Typography variant="caption" sx={{ color: "#ffff" }}>
+        Tasks with due date and time shows up here
+      </Typography>
+    </Box>
+  );
+}
 
-export { Tooltip, Importanttip };
+export { Tooltip, Importanttip, Plannedtip };

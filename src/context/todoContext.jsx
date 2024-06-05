@@ -75,6 +75,23 @@ export const TodoProvider = ({ children }) => {
   const handleBg = (payload) => {
     setBg(payload);
   };
+  // for-myday-ends
+
+  // context-function-for-current-for-important-background
+  const [impcurrent, setImpcurrent] = useState(1);
+
+  const Switchimpbg = (payload) => {
+    setImpcurrent(payload);
+  };
+  // for-important-ends
+
+  // context-function-for-current-for-planned-background
+  const [plannedCurrent, setPlanedCurrent] = useState(2);
+
+  const Switchplannedbg = (payload) => {
+    setPlanedCurrent(payload);
+  };
+  // for-planned-ends
 
   return (
     <React.Fragment>
@@ -85,6 +102,8 @@ export const TodoProvider = ({ children }) => {
           todoEdit,
           current,
           planned,
+          impcurrent,
+          plannedCurrent,
           addTodo,
           deleteTodo,
           addImportant,
@@ -94,6 +113,8 @@ export const TodoProvider = ({ children }) => {
           deleteImp,
           addPlanned,
           handleBg,
+          Switchimpbg,
+          Switchplannedbg,
         }}
       >
         {children}

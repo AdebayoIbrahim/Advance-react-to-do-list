@@ -37,7 +37,8 @@ function Importanttip() {
         width: "15em",
         padding: "1rem .8rem .8rem",
         borderRadius: "10px",
-        background: "transparent",
+        // background: "transparent",
+        background: "rgb(0 0 0 / .5)",
         textAlign: "center",
         lineHeight: "0 !important",
       }}
@@ -70,7 +71,8 @@ function Plannedtip() {
         width: "15em",
         padding: "1rem .8rem .8rem",
         borderRadius: "10px",
-        background: "transparent",
+        // background: "transparent",
+        background: "rgb(0 0 0 / .5)",
         textAlign: "center",
         lineHeight: "0 !important",
       }}

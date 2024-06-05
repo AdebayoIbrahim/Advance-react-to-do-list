@@ -32,7 +32,7 @@ const Listitem = styled(ListItem)({
 export default function Sidebar() {
   const { todo, important } = useContext(TodoContext);
   const { pathname } = useResolvedPath();
-  console.log(pathname);
+  // console.log(pathname);
   return (
     <Box
       pl={0.8}

@@ -3,14 +3,19 @@ import { Typography, Grid } from "@mui/material";
 import bgArr from "../../data/bgArray";
 import { useContext, useState } from "react";
 import TodoContext from "../../context/todoContext";
+import { useResolvedPath } from "react-router-dom";
 const DropdownContent = ({ close }) => {
   // calling_defined_context
 
-  const { handleBg } = useContext(TodoContext);
+  const { handleBg, Switchimpbg } = useContext(TodoContext);
   // state-to-toggle-current-clicked
   const [current, setCurrent] = useState(`image1`);
+  const [impCurrent, setimpCurr] = useState(`image2`);
+  const [planned, setPlanned] = useState("image3");
 
+  const { pathname } = useResolvedPath();
   // declare_bg_changes
+  // console.log(pathname);
   const handleClick = (payload) => {
     const { id } = payload;
     console.log(id);
@@ -20,6 +25,29 @@ const DropdownContent = ({ close }) => {
     setCurrent(`image${id}`);
     // close();
   };
+
+  // funtion-to-trigger-bg-change-by-current-url
+  function CheckPath() {
+    let status;
+    switch (pathname) {
+      case "/":
+        status = current;
+        break;
+      case "/important":
+        status = impCurrent;
+        break;
+      case "/planned":
+        status = planned;
+        break;
+      default:
+        status = current;
+    }
+
+    return status;
+  }
+
+  const getcurr = CheckPath();
+  console.log(getcurr);
 
   return (
     <Box sx={{ width: "100%" }}>
@@ -41,7 +69,9 @@ const DropdownContent = ({ close }) => {
                 }}
               >
                 <Box
-                  className={`themes_active ${current === `image${bg.id}` ? "act_current" : ""}`}
+                  className={`themes_active ${
+                    getcurr === `image${bg.id}` ? "act_current" : ""
+                  }`}
                   sx={{ width: "65px", height: "65px" }}
                 >
                   <img

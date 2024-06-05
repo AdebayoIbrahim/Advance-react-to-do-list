@@ -1,8 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Stack, Box, Typography, Menu } from "@mui/material";
 import { MoreVert } from "@mui/icons-material";
 import DropdownContent from "../shared/dropdown.jsx";
+import TodoContext from "../../context/todoContext.jsx";
+import { useResolvedPath } from "react-router-dom";
+import bgArr from "../../data/bgArray.js";
 const Body = ({ Starticon, titleText, children }) => {
+  const { impcurrent, plannedCurrent } = useContext(TodoContext);
+  const { pathname } = useResolvedPath();
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -10,6 +15,27 @@ const Body = ({ Starticon, titleText, children }) => {
   };
   const handleClose = () => {
     setAnchorEl(null);
+  };
+
+  // function-to-trigger-by-pathanames
+  // useEffect(() => {
+  //   setBypath();
+  //   console.log(pathname);
+  // }, []);
+
+  const setBypath = () => {
+    let locate;
+    switch (pathname) {
+      case "/important":
+        console.log("here");
+        return (locate = `url(${bgArr[impcurrent].image})`);
+      case "/planned":
+        return (locate = `url(${bgArr[plannedCurrent].image})`);
+      default:
+        locate = "#1e1e1e";
+    }
+
+    return locate;
   };
 
   return (
@@ -24,8 +50,10 @@ const Body = ({ Starticon, titleText, children }) => {
         sx={{
           width: "100%",
           height: "100vh",
-          background: "#1e1e1e",
+          background: setBypath(),
           overflow: "auto !important",
+          backgroundSize: "cover",
+          borderRadius: "10px 10px 0 0 ",
         }}
       >
         <Box>

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { Stack, Box, Typography, Menu } from "@mui/material";
 import { MoreVert } from "@mui/icons-material";
 import DropdownContent from "../shared/dropdown.jsx";
@@ -27,7 +27,7 @@ const Body = ({ Starticon, titleText, children }) => {
     let locate;
     switch (pathname) {
       case "/important":
-        console.log("here");
+        // console.log("here");
         return (locate = `url(${bgArr[impcurrent].image})`);
       case "/planned":
         return (locate = `url(${bgArr[plannedCurrent].image})`);

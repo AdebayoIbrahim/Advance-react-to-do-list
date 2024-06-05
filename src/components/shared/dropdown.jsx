@@ -1,53 +1,72 @@
+import React from "react";
 import { Box } from "@mui/material";
 import { Typography, Grid } from "@mui/material";
 import bgArr from "../../data/bgArray";
-import { useContext, useState } from "react";
+import { useContext, useMemo, useState } from "react";
 import TodoContext from "../../context/todoContext";
 import { useResolvedPath } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 const DropdownContent = ({ close }) => {
   // calling_defined_context
 
-  const { handleBg, Switchimpbg } = useContext(TodoContext);
+  const { current, handleBg, Switchimpbg, Switchplannedbg } =
+    useContext(TodoContext);
   // state-to-toggle-current-clicked
-  const [current, setCurrent] = useState(`image1`);
-  const [impCurrent, setimpCurr] = useState(`image2`);
-  const [planned, setPlanned] = useState("image3");
+
+  const [currentS, setCurrent] = useState(`image${current}`);
+  const [impCurrentS, setimpCurr] = useState(`image2`);
+  const [plannedS, setPlanned] = useState("image3");
 
   const { pathname } = useResolvedPath();
+  // funtion-to-trigger-bg-change-by-current-url
+
+  const getcurr = useMemo(() => {
+    let status;
+    switch (pathname) {
+      case "/":
+        status = currentS;
+        break;
+      case "/important":
+        status = impCurrentS;
+        break;
+      case "/planned":
+        status = plannedS;
+        break;
+      default:
+        status = currentS;
+    }
+
+    return status;
+  }, [pathname, currentS, impCurrentS, plannedS]);
+  // const getcurr = CheckPath();
+  // console.log(getcurr);
+
   // declare_bg_changes
   // console.log(pathname);
   const handleClick = (payload) => {
     const { id } = payload;
     console.log(id);
 
-    // change-current-background
-    handleBg(Number(id - 1));
-    setCurrent(`image${id}`);
-    // close();
-  };
-
-  // funtion-to-trigger-bg-change-by-current-url
-  function CheckPath() {
-    let status;
-    switch (pathname) {
+    // change-current-background- based on path
+    const path = window.location.pathname;
+    // console.log(path);
+    switch (path) {
       case "/":
-        status = current;
+        handleBg(Number(id - 1));
+        setCurrent(`image${id}`);
         break;
       case "/important":
-        status = impCurrent;
+        Switchimpbg(Number(id - 1));
+        setimpCurr(`image${id}`);
         break;
       case "/planned":
-        status = planned;
+        Switchplannedbg(Number(id - 1));
+        setPlanned(`image${id}`);
         break;
       default:
-        status = current;
+        break;
     }
-
-    return status;
-  }
-
-  const getcurr = CheckPath();
-  console.log(getcurr);
+  };
 
   return (
     <Box sx={{ width: "100%" }}>
@@ -70,15 +89,16 @@ const DropdownContent = ({ close }) => {
               >
                 <Box
                   className={`themes_active ${
-                    getcurr === `image${bg.id}` ? "act_current" : ""
+                    getcurr === `image${Number(bg.id - 1)}` ? "act_current" : ""
                   }`}
                   sx={{ width: "65px", height: "65px" }}
                 >
-                  <img
+                  <LazyLoadImage
                     src={bg.image}
                     alt={bg.title}
-                    width={"100%"}
-                    height={"100%"}
+                    effect="blur"
+                    width="100%"
+                    height="100%"
                     style={{ borderRadius: "inherit" }}
                   />
                 </Box>
@@ -91,4 +111,4 @@ const DropdownContent = ({ close }) => {
   );
 };
 
-export default DropdownContent;
+export default React.memo(DropdownContent);

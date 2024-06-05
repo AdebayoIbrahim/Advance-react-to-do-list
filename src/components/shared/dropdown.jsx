@@ -20,7 +20,7 @@ const DropdownContent = ({ close }) => {
   const { pathname } = useResolvedPath();
   // funtion-to-trigger-bg-change-by-current-url
 
-  const getcurr = useMemo(() => {
+  const CheckPath = () => {
     let status;
     switch (pathname) {
       case "/":
@@ -37,8 +37,8 @@ const DropdownContent = ({ close }) => {
     }
 
     return status;
-  }, [pathname, currentS, impCurrentS, plannedS]);
-  // const getcurr = CheckPath();
+  };
+  const getcurr = CheckPath();
   // console.log(getcurr);
 
   // declare_bg_changes
@@ -111,4 +111,4 @@ const DropdownContent = ({ close }) => {
   );
 };
 
-export default React.memo(DropdownContent);
+export default DropdownContent;
